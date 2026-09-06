@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Uso del micrófono en segundo plano — MaSer ONDA</title><link rel="stylesheet" href="_estilo.css"></head>
+<body><main>
+<h1>Uso del micrófono en segundo plano</h1>
+<p class="meta">MaSer ONDA · demostración para Google Play · 2026-09-06</p>
+
+<p>Esta página demuestra por qué MaSer ONDA declara el permiso
+<code>FOREGROUND_SERVICE_MICROPHONE</code> en Android, tal y como pide la declaración de
+«Permisos de servicios en primer plano» de Google Play.</p>
+
+<video src="micro-en-segundo-plano.mp4" controls playsinline muted
+       style="width:100%;max-width:360px;display:block;margin:1.5rem auto;border-radius:12px"></video>
+
+<h2>Qué se ve en el vídeo</h2>
+<ol>
+<li><strong>Una conversación de voz en curso</strong> entre dos personas adultas de la comunidad.
+La pantalla indica «Tu audio no se graba» y ofrece silenciar el micrófono, el altavoz, pasar a
+chat o salir.</li>
+<li><strong>La aplicación pasa a segundo plano.</strong></li>
+<li><strong>La notificación permanente sigue ahí</strong>: «Conversación en curso · Toca para
+volver a la conversación». Es la notificación del servicio en primer plano, del tipo
+<em>micrófono</em>, y es visible durante toda la llamada.</li>
+<li><strong>Al tocarla se vuelve a la conversación, que sigue viva.</strong></li>
+</ol>
+
+<h2>Por qué es imprescindible</h2>
+<p>Sin el servicio en primer plano, Android congela el proceso en cuanto la persona bloquea la
+pantalla o cambia de aplicación, y la conversación se corta a mitad. Medido en un dispositivo
+real: con la voz activa, al pasar la aplicación a segundo plano la sala pasaba de dos
+participantes a uno en unos 30 segundos. Es el mismo comportamiento que se espera de cualquier
+llamada.</p>
+
+<h2>Alcance del permiso</h2>
+<ul>
+<li>El servicio <strong>solo</strong> se inicia al entrar en una sala de voz, y se detiene en
+cuanto la persona sale o la conversación termina.</li>
+<li>El micrófono <strong>no</strong> se usa fuera de una sala de voz.</li>
+<li><strong>No se graba audio</strong> en ningún momento, ni en el dispositivo ni en el servidor.</li>
+<li>La aplicación declara un único tipo de servicio en primer plano: <code>microphone</code>.</li>
+</ul>
+
+<p><a href="index.html">← Volver</a></p>
+<footer>Contacto: <a href="mailto:s.lopezrap@gmail.com">s.lopezrap@gmail.com</a></footer>
+</main></body></html>
